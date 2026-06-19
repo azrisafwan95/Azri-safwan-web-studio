@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,40 +21,53 @@ const Navbar = () => {
     { name: 'Tentang', href: '#about' },
   ];
 
+  // Guna nombor abang: 01121281024
+  const whatsappLink = "https://wa.me/601121281024";
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-md py-3 shadow-lg border-b border-yellow-500/20' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <Code2 className="text-yellow-500 w-8 h-8" />
-            <span className="text-xl font-bold tracking-tighter text-white">
-              AZRI <span className="text-yellow-500">SAFWAN</span>
-            </span>
+          
+          {/* LOGO SECTION */}
+          <div className="flex items-center">
+            <a href="#home" className="flex items-center group">
+              <img 
+                src="/logo-azri-safwan.png" 
+                alt="Azri Safwan Web Studio" 
+                className="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+              />
+            </a>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-yellow-500 transition-colors font-medium"
+                className="text-gray-300 hover:text-yellow-500 transition-colors font-semibold text-sm uppercase tracking-wider"
               >
                 {link.name}
               </a>
             ))}
             <a
-              href="https://wa.me/60123456789"
-              className="bg-yellow-500 hover:bg-yellow-600 text-black px-5 py-2 rounded-full font-bold transition-transform hover:scale-105"
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-2 rounded-full font-black text-xs uppercase tracking-tighter transition-all hover:shadow-[0_0_15px_rgba(234,179,8,0.4)] active:scale-95"
             >
-              WhatsApp
+              Hubungi Saya
             </a>
           </div>
 
           {/* Mobile Button */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white">
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="text-yellow-500 p-2 focus:outline-none"
+            >
+              {isOpen ? <X size={30} /> : <Menu size={30} />}
             </button>
           </div>
         </div>
@@ -63,26 +76,31 @@ const Navbar = () => {
       {/* Mobile Nav */}
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-black/95 absolute top-full left-0 w-full p-4 flex flex-col space-y-4 items-center border-t border-yellow-500/20"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          className="md:hidden bg-black/98 border-t border-yellow-500/20 overflow-hidden"
         >
-          {navLinks.map((link) => (
+          <div className="px-6 py-8 flex flex-col space-y-6 items-center">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-gray-300 hover:text-yellow-500 text-lg font-bold uppercase tracking-widest"
+              >
+                {link.name}
+              </a>
+            ))}
             <a
-              key={link.name}
-              href={link.href}
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
-              className="text-gray-300 hover:text-yellow-500 text-lg"
+              className="bg-yellow-500 text-black px-10 py-4 rounded-full font-black uppercase text-sm w-full text-center shadow-lg"
             >
-              {link.name}
+              WhatsApp Sekarang
             </a>
-          ))}
-          <a
-            href="https://wa.me/60123456789"
-            className="bg-yellow-500 text-black px-8 py-3 rounded-full font-bold w-full text-center"
-          >
-            WhatsApp
-          </a>
+          </div>
         </motion.div>
       )}
     </nav>
