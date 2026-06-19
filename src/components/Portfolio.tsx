@@ -14,7 +14,7 @@ const projects = [
     title: 'FreshService Aircond',
     category: 'Servis Kediaman',
     description: 'Website perkhidmatan aircond dan cuci rumah dengan rupa paras yang segar, bersih, dan mesra pengguna.',
-    image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7eed?auto=format&fit=crop&q=80&w=1000',
+    image: 'technician-man.jpg',
     tags: ['Service Landing', 'WhatsApp API', 'Clean UI'],
     link: 'https://fresh-service-landing-page.vercel.app/'
   },
