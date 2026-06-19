@@ -13,7 +13,7 @@ const projects = [
     title: 'Portal Servis Aircond',
     category: 'Service Industry',
     description: 'Website tempahan servis aircond dengan sistem kalendar dan invois automatik.',
-    image: 'https://images.unsplash.com/photo-1621905252507-b354bcadcabc?auto=format&fit=crop&q=80&w=1000',
+    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000',
     tags: ['Booking System', 'Tailwind', 'SEO']
   },
   {
