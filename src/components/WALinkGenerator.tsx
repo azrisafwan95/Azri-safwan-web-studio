@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { MessageCircle, Copy, Check, ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { Copy, Check, ExternalLink } from 'lucide-react';
 
 const WALinkGenerator = () => {
   const [phone, setPhone] = useState('');
