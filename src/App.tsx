@@ -2,7 +2,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
 import Pricing from './components/Pricing';
-import WALinkGenerator from './components/WALinkGenerator'; // <-- Import baru
+import WALinkGenerator from './components/WALinkGenerator';
+import InvoiceGenerator from './components/InvoiceGenerator'; // <-- Ini suis baru
 import About from './components/About';
 import Footer from './components/Footer';
 
@@ -15,8 +16,11 @@ function App() {
         <Portfolio />
         <Pricing />
         
-        {/* Bahagian Tool Percuma */}
+        {/* Bahagian Tool Percuma WhatsApp */}
         <WALinkGenerator />
+
+        {/* Bahagian Tool Invois Profesional */}
+        <InvoiceGenerator />
         
         <About />
       </main>
