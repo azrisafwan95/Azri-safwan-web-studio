@@ -1,12 +1,9 @@
 @import "tailwindcss";
 
-@theme {
+:root {
   --color-primary-gold: #D4AF37;
   --color-primary-blue: #0070f3;
   --color-bg-dark: #0a0a0a;
-}
-
-:root {
   background-color: var(--color-bg-dark);
   color: white;
   font-family: 'Inter', sans-serif;
@@ -25,9 +22,15 @@ html {
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-linear-to-r from-yellow-400 to-yellow-600;
+  background-image: linear-gradient(to right, #f6e05e, #d69e2e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .gradient-blue-text {
-  @apply bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-blue-600;
+  background-image: linear-gradient(to right, #60a5fa, #4299e1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

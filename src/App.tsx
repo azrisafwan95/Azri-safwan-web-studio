@@ -2,8 +2,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
 import Pricing from './components/Pricing';
-import WALinkGenerator from './components/WALinkGenerator';
-import InvoiceGenerator from './components/InvoiceGenerator'; // <-- Ini suis baru
+import WALinkGenerator from './components/WALinkGenerator'; // <-- Import baru
+import InvoiceGenerator from './components/InvoiceGenerator';
 import About from './components/About';
 import Footer from './components/Footer';
 
