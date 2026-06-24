@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
 import Pricing from './components/Pricing';
+import WALinkGenerator from './components/WALinkGenerator'; // <-- Import baru
 import About from './components/About';
 import Footer from './components/Footer';
 
@@ -13,6 +14,10 @@ function App() {
         <Hero />
         <Portfolio />
         <Pricing />
+        
+        {/* Bahagian Tool Percuma */}
+        <WALinkGenerator /> 
+        
         <About />
       </main>
       <Footer />
