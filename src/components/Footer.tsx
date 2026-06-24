@@ -1,4 +1,4 @@
-import { Mail, Phone, MessageCircle, LinkedIn, Github } from 'lucide-react';
+import { Mail, Phone, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
