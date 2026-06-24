@@ -16,7 +16,7 @@ function App() {
         <Pricing />
         
         {/* Bahagian Tool Percuma */}
-        <WALinkGenerator /> 
+        <WALinkGenerator />
         
         <About />
       </main>
