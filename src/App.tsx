@@ -20,24 +20,16 @@ function App() {
       <Routes>
         <Route path="/admin/*" element={<StudioPage />} />
         <Route path="/" element={
-          <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-yellow-500">
+          <div className="min-h-screen bg-[#0a0a0a] text-white">
             <Navbar lang={lang} setLang={setLang} t={t.nav} />
             <main>
               <Hero t={t.hero} />
               <Portfolio t={t.portfolio} />
               <Pricing t={t.pricing} />
-              
               <div id="tools" className="py-20 bg-[#0d0e12]">
-                <div className="text-center mb-16 px-4">
-                   <h2 className="text-3xl md:text-5xl font-black text-white mb-4 uppercase italic tracking-tighter">
-                    {t.tools.title} <span className="text-yellow-500">{t.tools.titleGold}</span>
-                  </h2>
-                  <p className="text-gray-400 font-medium text-sm max-w-xl mx-auto">{t.tools.desc}</p>
-                </div>
-                <WALinkGenerator t={t.tools} />
-                <InvoiceGenerator t={t.tools} />
+                <WALinkGenerator t={t.wa} />
+                <InvoiceGenerator t={t.inv} />
               </div>
-
               <About t={t.about} />
             </main>
             <Footer t={t.footer} />

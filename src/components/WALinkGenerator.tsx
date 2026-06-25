@@ -53,10 +53,9 @@ const WALinkGenerator = ({ t }: any) => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-      <div className="text-center mb-10">
-        <h3 className="text-xl font-black text-yellow-500 uppercase tracking-widest italic mb-2">{t.title}</h3>
-      </div>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 text-center">
+      <h3 className="text-xl font-black text-yellow-500 uppercase tracking-widest italic mb-2">{t.title}</h3>
+      <p className="text-gray-500 text-[10px] uppercase font-bold tracking-widest mb-10">{t.desc}</p>
 
       <div className="flex justify-center gap-4 mb-10">
         <button onClick={() => setMode('chat')} className={`px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all ${mode === 'chat' ? 'bg-yellow-500 text-black shadow-lg' : 'bg-white/5 text-gray-500 border border-white/5'}`}><MessageSquare size={14} className="inline mr-2"/> {t.chatBtn}</button>
