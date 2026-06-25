@@ -28,7 +28,7 @@ const Navbar = ({ lang, setLang, t }: any) => {
           
           <div className="flex items-center">
             <a href="#home" className="flex items-center group">
-              <img src="/logo-azri-safwan-logo.png" alt="Logo" className="h-10 md:h-12 w-auto transition-transform group-hover:scale-105" />
+              <img src="/logo-baru.png" alt="Logo" className="h-10 md:h-12 w-auto transition-transform group-hover:scale-105" />
             </a>
           </div>
 
