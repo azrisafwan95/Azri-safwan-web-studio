@@ -1,67 +1,47 @@
-import { Mail, Phone, MessageCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Award, ShieldCheck, Zap, Truck } from 'lucide-react';
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  const phone = "601121281024";
-  const email = "azrisafwan.studio@gmail.com"; // Abang boleh tukar email ni nanti
+const About = ({ t }: any) => {
+  const stats = [
+    { icon: Award, label: t.stat1, value: 'PREMIUM' },
+    { icon: Truck, label: t.stat2, value: '100%' },
+    { icon: ShieldCheck, label: t.stat3, value: 'PAKAR' },
+    { icon: Zap, label: t.stat4, value: 'MODEN' },
+  ];
 
   return (
-    <footer className="bg-[#0a0a0b] py-16 border-t border-white/5">
+    <section id="about" className="py-24 bg-[#0d0e12]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
-          
-          {/* Logo & Description */}
-          <div className="flex flex-col items-start">
-            <div className="flex items-center mb-6">
-              <img 
-                src="/logo-azri-safwan.png" 
-                alt="Azri Safwan Logo" 
-                className="h-10 w-auto opacity-80"
-              />
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter uppercase italic">
+              {t.title} <span className="text-yellow-500">{t.titleGold}</span>
+            </h2>
+            <p className="text-gray-300 mb-6 leading-relaxed text-lg font-medium">{t.story}</p>
+            <p className="text-gray-400 mb-8 leading-relaxed">{t.vision}</p>
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, index) => (
+                <div key={index} className="p-5 bg-white/5 border border-white/5 rounded-3xl group">
+                  <stat.icon className="text-yellow-500 mb-3 group-hover:scale-110 transition-transform" size={24} />
+                  <div className="text-xl font-black text-white tracking-tighter">{stat.value}</div>
+                  <div className="text-[10px] text-gray-500 uppercase font-bold tracking-widest">{stat.label}</div>
+                </div>
+              ))}
             </div>
-            <p className="text-gray-500 text-sm max-w-xs leading-relaxed font-medium">
-              Membina masa depan digital untuk perniagaan IKS Malaysia dengan rekaan premium dan teknologi web terkini.
-            </p>
-          </div>
-
-          {/* Contact & Socials */}
-          <div className="flex flex-col items-start md:items-end gap-6 w-full md:w-auto">
-            <div className="flex gap-5">
-              <a href={`tel:+${phone}`} className="text-gray-500 hover:text-yellow-500 transition-all hover:-translate-y-1">
-                <Phone size={22} />
-              </a>
-              <a href={`mailto:${email}`} className="text-gray-500 hover:text-yellow-500 transition-all hover:-translate-y-1">
-                <Mail size={22} />
-              </a>
-              {/* LinkedIn Placeholder - Bila abang dah ada link, letak kat href tu */}
-              <a href="#" className="text-gray-500 hover:text-yellow-500 transition-all hover:-translate-y-1">
-                <MessageCircle size={22} />
-              </a>
+          </motion.div>
+          <div className="relative">
+            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden border-2 border-yellow-500/20 shadow-2xl">
+              <img src="/azri-safwan.jpg" alt="Founder" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
             </div>
-            
-            <a
-              href={`https://wa.me/${phone}?text=Salam Azri Safwan Studio. Saya ingin bertanya tentang servis website.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 px-8 py-3 rounded-2xl font-black text-xs uppercase tracking-widest transition-all hover:bg-yellow-500 hover:text-black hover:shadow-[0_0_20px_rgba(234,179,8,0.3)]"
-            >
-              <MessageCircle size={18} /> Hubungi Studio
-            </a>
+            <div className="absolute -bottom-6 -left-6 bg-yellow-500 p-6 rounded-3xl shadow-2xl rotate-3 hidden md:block">
+              <p className="text-black font-black text-xs uppercase tracking-widest leading-none">Founder & Lead Dev</p>
+              <h4 className="text-black font-black text-xl italic uppercase tracking-tighter">Azri Safwan</h4>
+            </div>
           </div>
-        </div>
-        
-        {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-600 text-[10px] font-bold uppercase tracking-[0.2em]">
-            © {currentYear} Azri Safwan Web Studio. Hak Cipta Terpelihara.
-          </p>
-          <p className="text-gray-700 text-[9px] font-black uppercase tracking-widest italic">
-            Built from the cabin of a truck.
-          </p>
         </div>
       </div>
-    </footer>
+    </section>
   );
 };
 
-export default Footer;
+export default About;
