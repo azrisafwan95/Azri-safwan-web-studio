@@ -50,7 +50,7 @@ const Portfolio = () => {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <motion.div
                 key={project._id}
                 initial={{ opacity: 0, y: 30 }}
