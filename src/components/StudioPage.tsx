@@ -16,7 +16,20 @@ const config = defineConfig({
         type: 'document',
         fields: [
           { name: 'title', title: 'Nama Projek', type: 'string' },
-          { name: 'category', title: 'Kategori', type: 'string' },
+          { 
+            name: 'category', 
+            title: 'Kategori', 
+            type: 'string',
+            // --- KITA TAMBAH DROPDOWN KAT SINI ---
+            options: {
+              list: [
+                { title: 'Landing Page', value: 'Landing Page' },
+                { title: 'Website', value: 'Website' },
+                { title: 'E-Commerce', value: 'E-Commerce' },
+              ],
+            },
+            validation: Rule => Rule.required() // Supaya abang tak lupa pilih
+          },
           { name: 'description', title: 'Penerangan', type: 'text' },
           { 
             name: 'image', 
